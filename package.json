@@ -1,0 +1,23 @@
+{
+  "name": "blogtest",
+  "version": "1.0.0",
+  "description": "Blog Post Exercise for Thinkful",
+  "main": "model.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sesham18/blogTest.git"
+  },
+  "author": "Sesha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sesham18/blogTest/issues"
+  },
+  "homepage": "https://github.com/sesham18/blogTest#readme",
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}
