@@ -3,7 +3,7 @@ const router = express.Router();
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-const {BlogPosts} = require('./models');
+const {BlogPosts} = require('./model');
 
 BlogPosts.create('Harry Potter', 'A boy discovers he is a wizard', 'JK Rowling'); 
 BlogPosts.create('Emma','A wealthy girl plays matchmaker', 'Jane Austen'); 
