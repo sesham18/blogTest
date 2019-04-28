@@ -13,7 +13,7 @@ const expect = chai.expect;
 // see: https://github.com/chaijs/chai-http
 chai.use(chaiHttp);
 
-describe("BlogPosts", function() {
+describe("Blog Posts", function() {
   // Before our tests run, we activate the server. Our `runServer`
   // function returns a promise, and we return the that promise by
   // doing `return runServer`. If we didn't return a promise here,
@@ -50,10 +50,10 @@ describe("BlogPosts", function() {
         expect(res.body).to.be.a("array");
 
         // because we create three items on app load
-        expect(res.body.length).to.be.at.least(1);
+        expect(res.body.length).to.be.at.least(0);
         // each item should be an object with key/value pairs
         // for `id`, `name` and `checked`.
-        const expectedKeys = ["title", "content", "author", "publishDate"];
+        const expectedKeys = ["id", "title", "content", "author", "publishDate"];
         res.body.forEach(function(item) {
           expect(item).to.be.a("object");
           expect(item).to.include.keys(expectedKeys);
@@ -66,7 +66,7 @@ describe("BlogPosts", function() {
   //  2. inspect response object and prove it has right
   //  status code and that the returned object has an `id`
   it("should add an item on POST", function() {
-    const newItem = { title: "Apple", content: 'everday things happen', author: "EL Poop", publishDate: "May 11, 2017" };
+    const newItem = { title: "Apple", content: 'everday things happen', author: "EL Poop"};
     return chai
       .request(app)
       .post("/blog-posts")
@@ -101,7 +101,6 @@ describe("BlogPosts", function() {
       title: "foo",
       content: "The day was good",
       author: "EL Poo", 
-      publishDate: "May 11, 2098",
     };
 
     return (
